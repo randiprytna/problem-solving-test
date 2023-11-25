@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Location\ReservationManagementController;
+use App\Http\Controllers\InventoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +28,6 @@ Route::middleware('guest')->group(function ()
 Route::middleware('auth')->group(function ()
 {
     Route::get('sign-out', [AuthController::class, 'signout'])->name('signout');
-    Route::get('inventory', function () {
-        return view('pages.inventory.index');
-    })->name('inventory');
+    Route::get('inventory', [InventoryController::class, 'index'])->name('inventory');
+    Route::get('inventory/data', [InventoryController::class, 'dataInventory'])->name('inventory.data');
 });
