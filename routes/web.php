@@ -29,5 +29,7 @@ Route::middleware('auth')->group(function ()
 {
     Route::get('sign-out', [AuthController::class, 'signout'])->name('signout');
     Route::get('inventory', [InventoryController::class, 'index'])->name('inventory');
+    Route::get('inventory/edit/{id}', [InventoryController::class, 'edit'])->name('inventory.edit');
+    Route::post('inventory/edit/{id}', [InventoryController::class, 'editAction']);
     Route::get('inventory/data', [InventoryController::class, 'dataInventory'])->name('inventory.data');
 });

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="app-container my-3">
+    <div class="app-container my-3">
         @include('components.error-message')
     </div>
     <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
@@ -32,19 +32,19 @@
 							</div>
 						</div>
                         <div class="card-body">
-                        <table class="table table-striped table-row-bordered gy-5 gs-7">
-                            <thead>
-                                <tr class="fw-semibold fs-6 text-gray-800">
-                                    <th>Ubah</th>
-                                    <th>No</th>
-                                    <th>Kode Kategori</th>
-                                    <th>Kode Klasifikasi</th>
-                                    <th>Kode Jenis</th>
-                                    <th>Tahun Mesin</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                            <table class="table table-striped table-row-bordered gy-5 gs-7">
+                                <thead>
+                                    <tr class="fw-semibold fs-6 text-gray-800">
+                                        <th>No</th>
+                                        <th>Kode Kategori</th>
+                                        <th>Kode Klasifikasi</th>
+                                        <th>Kode Jenis</th>
+                                        <th>Tahun Mesin</th>
+                                        <th>Ubah</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -98,8 +98,8 @@
                     "orderable": false,
                     "render": function (data, type, row) {
                         return `
-                            <a href="#" class="btn btn-dark">Edit</a>
-                        `;
+                            <a href="{{ route('inventory.edit', ':id') }}" class="btn btn-dark">Edit</a>
+                        `.replace(':id', row.id);
                     },
                 },
             ]
