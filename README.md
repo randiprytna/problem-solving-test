@@ -11,3 +11,11 @@ Tutorial penggunaan:
 6. `php artisan storage:link`
 7. `php artisan key:generate`
 8. `php artisan serve`
+
+# Info akun
+
+- Akun admin
+
+    email : admin@test.com
+
+    pass : Super123*Admin
